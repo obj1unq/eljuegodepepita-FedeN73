@@ -1,8 +1,14 @@
+import src.randomizer.*
 import wollok.game.*
+import direcciones.*
 
 object pepita {
-	var property position = game.at(2,2)
+	var position = game.at(2,2)
 	var energia = 100
+
+	method position(){
+		return position
+	}
 
 	method image() = "pepita.png"
 
@@ -18,4 +24,7 @@ object pepita {
 		return energia
 	}
 
+	method mover(direccion){
+		position = direccion.siguiente(position)
+	}
 }
