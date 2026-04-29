@@ -16,8 +16,9 @@ program PepitaGame {
 	keyboard.left().onPressDo({pepita.mover(izquierda)})
 	keyboard.right().onPressDo({pepita.mover(derecha)})
 
-	//keyboard.c().onPressDo({pepita.comer(manzana)})
+	game.onCollideDo(pepita, {manzana => pepita.comer(manzana)})
 
+	game.addVisual(manzana)
   	game.addVisual(silvestre)
 	game.addVisual(pepita)
 	game.start()

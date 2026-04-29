@@ -1,10 +1,14 @@
 import pepita.*
 
 object silvestre{
-    var presa = pepita
+    const presa = pepita
     
-    method position() = game.at(presa.position().x(),0)
+    method position() = game.at(self.positionx(),0)
 
     method image() = "silvestre.png"
+
+    method positionx(){
+        return if(presa.position().x() > 3) presa.position().x() else 3
+    }
 }
 
